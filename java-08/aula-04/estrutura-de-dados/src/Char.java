@@ -7,6 +7,14 @@ public class Char {
 		char nome[] = {'V','i','n','i','c','i','u','s'};
 		System.out.println(nome.length);
 //		for(inicializacao; condicao; acao(decrementacao/incrementacao))
-
+		
+		for(int i = nome.length - 1; i>=0 ; i--) {
+			System.out.print(nome[i]);
+		}
+		System.out.println("");
+		for(int i = 0; i < nome.length; i++) {
+			System.out.print(nome[i]);
+		}
+		
 	}
 }
