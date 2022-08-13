@@ -1,13 +1,15 @@
 
 public class Cliente {
-	String nome;
-	String cpf;
-	int numeroAgencia = 19;
-	int idade;
-	double saldo = 20;
+	
+	private String nome;
+	private String cpf;
+	private int numeroAgencia = 19;
+	private int idade;
+	private double saldo = 20;
+	public static int TOTAL_DE_CONTAS = 0;
 	
 	public Cliente(String nome, String cpf, int idade, double saldo) {
-		System.out.println("Estou Criando meu cliente 1");
+		TOTAL_DE_CONTAS++;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
@@ -15,6 +17,7 @@ public class Cliente {
 	}
 	
 	public Cliente(String nome, String cpf, int idade) {
+		TOTAL_DE_CONTAS++;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
@@ -22,6 +25,7 @@ public class Cliente {
 	}
 	
 	public Cliente() {
+		TOTAL_DE_CONTAS++;
 		System.out.println("Estou Criando meu cliente 2");
 	}
 	
@@ -38,6 +42,26 @@ public class Cliente {
 		}
 	}
 	
+	public Cliente atualizarCliente(Cliente cliente) {
+		Cliente novoCliente = new Cliente();
+		novoCliente.nome = "Rodolfo";
+		novoCliente.idade = 21;
+		return novoCliente;
+	}
+	
+	public static Cliente criarClienteRonaldo() {
+		Cliente novoCliente = new Cliente();
+		novoCliente.setNome("Ronaldo");
+		novoCliente.setIdade(18);
+		
+		return novoCliente;
+	}
+	
+	
+	public static int soma(int a, int b) {
+		return a + b;
+	}
+	
 	public boolean transferencia(double saldo, Cliente cliente2) {
 //		this.saldo = this.saldo - saldo; 
 		
@@ -50,5 +74,41 @@ public class Cliente {
 		return statusTransferencia;
 	}
 	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public void setNumeroAgencia(int numeroAgencia) {
+		this.numeroAgencia = numeroAgencia;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	
+	
+	public int getNumeroAgencia() {
+		return this.numeroAgencia;
+	}
+	
+	public double getSaldo() {
+		return this.saldo;
+	}
+	
+	public int getIdade() {
+		return this.idade;
+	}
+	
+	public String getCpf() {
+		return this.cpf;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
 	
 }
